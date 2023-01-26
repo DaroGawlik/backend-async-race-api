@@ -1,6 +1,5 @@
 const jsonServer = require('json-server');
-const serverless = require('serverless-http');
-const cors = require('cors'); 
+
 
 const db = {
     garage: [
@@ -96,7 +95,7 @@ server.patch('/engine', (req, res) => {
 });
 
 server.use(router);
-module.exports.handler = serverless(app);
-// server.listen(PORT, () => {
-//     console.log('Server is running on port', PORT);
-// });
+
+server.listen(PORT, () => {
+    console.log('Server is running on port', PORT);
+});
